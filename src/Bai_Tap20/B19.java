@@ -13,33 +13,26 @@ public class B19 {
     // Nếu dòng đầu tiên của truy vấn chứa Chuỗi Xóa, thì dòng thứ hai chứa chỉ mục x , phần tử của nó phải bị xóa khỏi L .
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         int n = sc.nextInt();
-
         ArrayList<Integer> L = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            int x = sc.nextInt();
-            L.add(x);
+            L.add(sc.nextInt());
         }
-
-        int Q = sc.nextInt();
-
-        for (int i = 0; i < Q; i++) {
+        int q = sc.nextInt();
+        for (int i = 0; i < q; i++) {
             String query = sc.next();
-            if (query.equals("Chèn")) {
+            if (query.equals("Insert")) {
                 int x = sc.nextInt();
                 int y = sc.nextInt();
                 L.add(x, y);
-            } else if (query.equals("Xóa")) {
+            } else if (query.equals("Delete")) {
                 int x = sc.nextInt();
                 L.remove(x);
+            }
         }
-    }
-
         for (int i = 0; i < L.size(); i++) {
             System.out.print(L.get(i) + " ");
         }
-        System.out.println();
     }
 }
 
